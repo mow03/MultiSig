@@ -226,11 +226,11 @@ contract MultiSig is AbstractMultiSig {
         // check if this signer has voted already, then we dont need to do anything
         require(openProposals[_beneficiary].votes[msg.sender] != voteStatus.Yea);
         
-        if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.Nay){
+      /*  if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.Nay){
             openProposals[_beneficiary].votes[msg.sender] = voteStatus.Yea;
              openProposals[_beneficiary].yea_count += 1;
              openProposals[_beneficiary].nay_count -= 1;
-        }
+        } */
         if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.NA){
             openProposals[_beneficiary].votes[msg.sender] = voteStatus.Yea;
              openProposals[_beneficiary].yea_count += 1;
@@ -253,11 +253,11 @@ contract MultiSig is AbstractMultiSig {
         // check if this signer has voted already, then we dont need to do anything
         require(openProposals[_beneficiary].votes[msg.sender] != voteStatus.Nay);
         
-        if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.Yea){
+      /*  if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.Yea){
             openProposals[_beneficiary].votes[msg.sender] = voteStatus.Nay;
              openProposals[_beneficiary].nay_count += 1;
              openProposals[_beneficiary].yea_count -= 1;
-        }
+        } */
         if(openProposals[_beneficiary].votes[msg.sender] == voteStatus.NA){
             openProposals[_beneficiary].votes[msg.sender] = voteStatus.Nay;
              openProposals[_beneficiary].nay_count += 1;
